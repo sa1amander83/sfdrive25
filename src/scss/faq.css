@@ -1,41 +1,29 @@
 @charset "UTF-8";
 /* desktop */
 @font-face {
-  font-family: "Roboto-medium";
-  src: url("../fonts/Roboto-medium.ttf");
-  font-weight: bold;
-  font-style: normal;
+  font-family: "Roboto-Medium";
+  src: url("../fonts/Roboto-Medium.ttf");
 }
 @font-face {
-  font-family: "Roboto-regular";
-  src: url("../fonts/Roboto-regular.ttf");
-  font-weight: bold;
-  font-style: normal;
+  font-family: "Roboto-Regular";
+  src: url("../fonts/Roboto-Regular.ttf");
 }
 @font-face {
   font-family: "Roboto-Light";
   src: url("../fonts/Roboto-Light.ttf");
-  font-weight: normal;
-  font-style: normal;
 }
 @font-face {
   font-family: "Roboto-Bold";
   src: url("../fonts/Roboto-Bold.ttf");
-  font-weight: normal;
-  font-style: normal;
 }
 @font-face {
   font-family: "icon";
   src: url("../fonts/icon.eot");
   src: url("../fonts/icon.eot?#iefix") format("embedded-opentype"), url("../fonts/icon.woff") format("woff"), url("../fonts/icon.ttf") format("truetype"), url("../fonts/icon.svg#icon") format("svg");
-  font-weight: normal;
-  font-style: normal;
 }
 [class*=icon-]:before {
   display: inline-block;
   font-family: "icon";
-  font-style: normal;
-  font-weight: normal;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -591,8 +579,7 @@ header {
     display: flex;
     justify-content: space-between;
     margin: 0;
-    :
-  min-width: 1440px;
+    min-width: 1440px;
     flex-direction: row;
   }
 }

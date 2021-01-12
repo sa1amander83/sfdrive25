@@ -2,52 +2,94 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const esLintWebpackPlugin = require('eslint-webpack-plugin');
+
+const PATHS = {
+  src: path.join(__dirname,'./src'),
+  dist: path.join(__dirname,'./dist'),
+  assets: path.join(__dirname,'./dist')
+};
 module.exports = {
-    entry: path.resolve(__dirname, 'src/js/script.js'),
-    output: {
-       publicPath: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
+    externals: {
+        paths: PATHS
     },
-    mode: 'production',
-    plugins: [new MiniCssExtractPlugin(),
-    new HTMLWebpackPlugin ({
-        template:'./src/faq.html',
-        filename: './dist/faq.html'
-    }),
+    entry: {
+        app: './src/js/script.js'},
+        output: {
+        filename: '[name].js',
+            path: PATHS.dist,
+            publicPath: './'
+    },
+    devServer: {
+        overlay: true
+    },
+      module: {
+        rules: [
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: '/node_modules/',
+            },
 
-        new HTMLWebpackPlugin ({
-            template:'./src/index.html',
-            filename: './dist/index.html'
-        }),
-
-    ],
-    module: {
-                   rules: [
-                {
-                    test: /\.scss$/i,
-                    use: ['style-loader', MiniCssExtractPlugin.loader,    'css-loader', 'sass-loader'],
-
-
-                },
-                {
-                    test: /\.(eot|woff|ttf|svg)$/,
-                    use: ['file-loader']
-                },
-                {
-                    test: /\.(jpg|jpeg|cur|png|bmp|gif)$/,
-                    use: ['file-loader']
-                },
-                {
-                    test: /\.html$/i,
-                    loader: 'html-loader',
-
+            {
+                test: /\.(css|scss)$/,
+                use: [
+                MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            implementation: require('node-sass'),
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.(woff|ttf|eot|svg)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: ''
                 }
+            },
+            {
+                test: /\.(png|jpg|gif|svg|jpeg)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]'
+                }
+            },
+                  ]
+    },
 
-            ],
-        },
-        optimization: {
-            minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
-        },
+    plugins: [new MiniCssExtractPlugin({
+        filename: '[name].css',
+    }),
+        new CopyWebpackPlugin ({
+                patterns:  [
+                    {    from: './src/img', to: './img' }],
 
-    };
+        }),
+    new HtmlWebpackPlugin ({
+        template: `${PATHS.src}/index.html`,
+        filename: './index.html',
+        minify: false
+
+    }),
+        new HtmlWebpackPlugin ({
+            template: `${PATHS.src}/faq.html`,
+            filename: './faq.html',
+            minify: false
+        }),
+        new esLintWebpackPlugin ({
+
+        })
+    ], optimization: {
+        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    },
+
+
+};
