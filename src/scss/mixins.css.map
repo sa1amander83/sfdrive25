@@ -1,1 +1,9 @@
-{"version":3,"sourceRoot":"","sources":["mixins.scss"],"names":[],"mappings":"AAQA","file":"mixins.css"}
+{
+    "version": 3,
+    "mappings": "AAKA,aAAa",
+    "sources": [
+        "mixins.scss"
+    ],
+    "names": [],
+    "file": "mixins.css"
+}

@@ -5,13 +5,14 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const esLintWebpackPlugin = require('eslint-webpack-plugin');
-
 const PATHS = {
   src: path.join(__dirname,'./src'),
   dist: path.join(__dirname,'./dist'),
   assets: path.join(__dirname,'./dist')
 };
 module.exports = {
+    mode:'development',
+    devtool: 'inline-source-map',
     externals: {
         paths: PATHS
     },
@@ -23,7 +24,8 @@ module.exports = {
             publicPath: './'
     },
     devServer: {
-        overlay: true
+        contentBase:__dirname+'/dist',
+
     },
       module: {
         rules: [
@@ -79,6 +81,7 @@ module.exports = {
         minify: false
 
     }),
+
         new HtmlWebpackPlugin ({
             template: `${PATHS.src}/faq.html`,
             filename: './faq.html',

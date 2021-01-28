@@ -501,8 +501,7 @@ header {
     display: flex;
     justify-content: space-between;
     margin: 0;
-    :
-  min-width: 1440px;
+    min-width: 1440px;
     flex-direction: row;
   }
 }
