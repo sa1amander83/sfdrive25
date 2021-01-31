@@ -17,7 +17,7 @@ module.exports = {
         paths: PATHS
     },
     entry: {
-        app: './src/js/script.js'},
+        index: './src/index.js'},
         output: {
         filename: '[name].js',
             path: PATHS.dist,
@@ -31,8 +31,13 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
+                loader:'babel-loader',
                 exclude: '/node_modules/',
+            },
+
+            {   test: /\.js$/,
+                exclude: "/node_modules/",
+                loader: "eslint-loader",
             },
 
             {
@@ -93,6 +98,10 @@ module.exports = {
     ], optimization: {
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
     },
-
+    performance: {
+        hints: false,
+        maxEntrypointSize: 5120000,
+        maxAssetSize: 5120000
+    }
 
 };

@@ -9,12 +9,12 @@ module.exports = {
             "experimentalObjectRestSpread": true
     }
 },
-    "plugins": [
-    "react"
-],
-
-    "rules": {
-        "react/prefer-stateless-function": "off",
+"plugins": ["react"]
+,
+       "rules": {
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error" ,
+           "react/prefer-stateless-function": "off",
     "comma-dangle": 0,
         "react/jsx-uses-vars": 1,
         "react/display-name": 1,

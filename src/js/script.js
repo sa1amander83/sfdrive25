@@ -1,7 +1,6 @@
 import"../scss/faq.scss";
 import"../scss/style.scss";
 
-
 const pageLoaded = function (){
     const menuBtn = document.querySelector(".menu__button");
     const closeMenuButton = document.querySelector(".menu__mobile-close");
