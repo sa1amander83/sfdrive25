@@ -1,5 +1,5 @@
-import"../scss/faq.scss";
-import"../scss/style.scss";
+import "../components/styles/faq.scss";
+import "../components/styles/style.scss";
 
 const pageLoaded = function (){
     const menuBtn = document.querySelector(".menu__button");

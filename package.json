@@ -4,14 +4,16 @@
   "description": "trainig in design",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --mode development --open --watch",
+    "dev": "webpack serve --mode development --open --watch --hot",
     "test": "test",
     "compile-sass": "sass src/scss/style.scss src/css/style.css",
     "watch-sass": "sass --watch src/scss/style.scss:src/css/style.css",
-    "build": "webpack --mode production ",
+    "build": "webpack",
     "lint": "eslint --fix --ext .js,.jsx .",
     "fix-code": "prettier-eslint --write 'src/**/*.{js,jsx}'",
-    "fix-styles": "prettier-stylelint --write 'src/**/*.{css,scss}' "
+    "fix-styles": "prettier-stylelint --write 'src/**/*.{css,scss}' ",
+    "server": "node server.js"
+
   },
   "browserslist": [
     ">1%",
@@ -62,6 +64,7 @@
     "prettier": "^2.2.1",
     "pug": "^3.0.0",
     "pug-loader": "^2.4.0",
+    "react-hot-loader": "^4.13.0",
     "sass": "^1.32.2",
     "sass-loader": "^10.1.0",
     "scss": "^0.2.4",

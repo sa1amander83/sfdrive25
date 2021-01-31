@@ -4,30 +4,18 @@ html {
   overflow-x:  hidden;
   @include xl {
     line-height: 1.15;
-    /* 1 */
     -webkit-text-size-adjust: 100%;
-    /* 2 */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-content: center;
     align-items: center;
     overflow-x: hidden;
-
-
-
   }
 }
-
-/* Sections
-   ========================================================================== */
-/**
- * Remove the margin in all browsers.
- */
 body {
   text-align: center;
   margin: 0;
-
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
