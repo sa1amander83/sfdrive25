@@ -13,7 +13,6 @@
     "fix-code": "prettier-eslint --write 'src/**/*.{js,jsx}'",
     "fix-styles": "prettier-stylelint --write 'src/**/*.{css,scss}' ",
     "server": "node server.js"
-
   },
   "browserslist": [
     ">1%",
