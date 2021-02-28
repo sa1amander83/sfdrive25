@@ -1,0 +1,105 @@
+@import "./mixins.scss";
+
+
+
+
+.step-above {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 19px;
+}
+.register-page {
+display: inline-block;
+}
+.info-wrapper {
+  width: 680px;
+
+}
+
+.tell-about {
+  margin: 20px auto;
+  padding: 0;
+  margin-bottom: 47px;
+}
+.information-about-you {
+  text-align:  left;
+  font-size: 36px;
+}
+
+.form-info, .form-passport {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr ;
+ grid-template-columns: 1fr 1fr ;
+}
+
+.form-info{
+  margin-bottom: 44px;
+}
+
+.form-passport {
+  margin-top: -11px;
+  margin-bottom: 45px;
+}
+
+.form-permiss {
+  display: grid;
+  grid-template-rows: 1fr 1fr ;
+ grid-template-columns: 1fr 1.57fr ;
+
+}
+label {
+ align-self: center;
+ justify-self: flex-start;
+ font-size: 14px;
+ padding-left: 2px;
+margin-bottom: 2px;
+}
+
+input {
+  cursor: url("cursor.png"), pointer;
+}
+
+
+
+.long-input {
+width: 416px;
+height: 44px;
+}
+
+.short-input {
+  width: 155px;
+height: 44px;
+}
+
+
+.information-about-you {
+  margin-bottom: 19px;
+}
+
+.permiss-de-condure.container {
+  margin-left: 3px;
+margin-bottom: 75px; }
+
+
+  input:focus{
+    border: 2px solid #61A199;
+    outline: none;
+  }
+
+  .rectangle-info {
+    height: 1px;
+    width: 1440px;
+    margin: 0 auto;
+    transform: translateX(-50%);
+left: 50%;
+position: relative;
+margin-bottom: 17px;
+  }
+  .continiue-button {
+    margin-bottom: 20px;
+    width: 176px;
+height: 51px;
+
+background: #E6E6E6;
+border-radius: 6px;
+  }

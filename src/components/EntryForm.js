@@ -1,12 +1,10 @@
-import React, {Component} from "react";
-
+import React from "react";
+import {NavLink} from 'react-router-dom';
 import "./styles/form.scss";
 
-class EntryForm extends Component {
+const EntryForm  = () => {
 
-render () {
-    return (
-<div className="modal__form is-animated">
+    return ( <div className="modal__form is-animated">
     <div className="modal__form-wrapper is-animated">
         <form className="modal__form-form" action="#">
             <div className="modal__form-close icon-close"></div>
@@ -17,13 +15,13 @@ render () {
                     <a href="#"  className="forgot__password">Забыли?</a>
               <button className="modal__form-send">Войти</button>
             <div className="modal__form_rectangle"></div>
-            <a className="register-link" href="#">Зарегистрироваться</a>
+            <NavLink to ="/Register" className="register-link">Зарегистрироваться</NavLink>
         </form>
     </div>
     </div>
     );
 }
 
-}
+
 
 export default EntryForm;

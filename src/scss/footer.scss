@@ -1,5 +1,3 @@
-@import "./mixins.scss";
-
 .main-footer {
 
   margin-top: 58px;
@@ -103,4 +101,5 @@
 .footer__social-links a:hover {
   transform: scale(1.4);
   color: #dcc59e;
-  cursor: pointer;}
+  cursor: pointer;
+}

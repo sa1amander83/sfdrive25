@@ -41,10 +41,11 @@ const About = () =>{
 </div>
 </div>
 </section>
-<section className="team" />
+
+<section className="team" >
 <div className="container"/>
      <h2 className="h3-team">Команда</h2>
-    <div className="team-wrapper"/>
+    <div className="team-wrapper">
          <div className="team-unit">
         <img src="img/ivanov.png" alt="Иван Иванов СЕО менеджер"/>
         <div className="unit__initials">Иван Иванов</div>
@@ -79,7 +80,9 @@ const About = () =>{
         <img src="img/strelkova.png" alt="Мария Стрелкова СММ менеджер"/>
         <div className="unit__initials">Мария Стрелкова</div>
         <div className="unit__prof">SMM</div>
+        </div>
       </div>
+      </section>
       </div>
  );
  }

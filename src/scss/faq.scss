@@ -251,7 +251,7 @@ border: none;
 }
 
 
-.collapse.active::after {
+.active:after {
   content: '\203A';
   color: #61A199;
   //transform-origin: center;

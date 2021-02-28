@@ -1,22 +1,23 @@
-@import "./mixins.scss";
 header {
-margin-bottom: 0px;
+  position: relative;
+  margin-bottom: 0px;
   @include xl {
-    position: sticky;
-    top: 0;
+    //position: fixed;
+    //top: 0;
     background: #fff;
     z-index: 1;
-  }
-}
+    opacity: 0.95;
+  }}
+
+
 
 .main-header {
-margin-top: -9px;
+
+  margin-top: -9px;
+
   @include xl { max-width: 100%;
+
     margin-bottom: 0;
-    position: sticky;
-  top: 0;
-  background: #fff;
-  z-index: 1;
     }
 }
 
@@ -46,15 +47,14 @@ margin-top: -9px;
   justify-content: space-between;
   padding: 0 20px;
   @include xl {
-    position: sticky;
-    top: 0;
-    background: #fff;
-    z-index: 1;
     display: flex;
     justify-content: space-between;
+
     margin: 0;
   min-width: 1440px;
     flex-direction: row;
+
+
   }
 }
 
@@ -63,14 +63,17 @@ margin-top: -9px;
   min-height: 40px;
   margin-top: 1px;
   margin-left: 2px;
+
   @include xl {
     align-self: center;
     width: 120px;
-    padding-left: 35px;
+    padding-left: 15px;
+
   }
 }
 
 p {
+
   @include xl {
     width: 120px;
   }
@@ -93,6 +96,7 @@ p {
   @include xl {
     transform: scale(1.2);
     background-color: #dbd6d6;
+
   }}
 
 .main-header li {
@@ -101,25 +105,36 @@ p {
 
 .menu-navigation {
   @include xl {
-    margin-right: 0;
+    margin-right: -26px;
     display: flex;
     width: 500px;
   }}
-
+  li.active {
+    content: "";
+  }
 .site-navigation, .user-navigation {
   display: none;
+
   @include xl {
     min-height: 90px;}
 }
 
 .main-navigation-wrapper .container .menu-navigation {
+
   display: none;
   @include xl{ display: flex;
     width: 500px;
     justify-content: space-evenly;
     padding-right: 17px;}
+
+}
+a.is-active.active::after {
+  content: none;
 }
 
+.site-navigation a.is-active.active::after{
+  content: none;
+}
 
 .user-navigation {
   display: none;
@@ -141,46 +156,48 @@ p {
     font-size: 16px;
     line-height: 19px;
     list-style: none;
+
     color: #1B1B1B;
   }}
 
 
-.site-navigation a:hover,
-.site-navigation a:focus{
- background-color: #dbd6d6;
-  padding: 12px 20px;
-}
+// .site-navigation a:hover,
+//  a:focus,
+// {  background-color: #dbd6d6;
+//   padding: 12px 20px;
+//   content:""
+// }
 
 .user-navigation a:hover,
 .user-navigation a:focus {
   background-color: #dbd6d6;
-  padding: 12px 30px;
+  padding: 12px 30px;}
 
+.user-navigation a::after {
+  content: none;
 }
-
 
 
 .user-navigation .login-link {
   display: none;
   @include xl{
-display: flex;
-padding: 12px 30px;
-width: 106px;
-height: 43px;
-flex-direction: row;
-align-items: center;
-border: 1px solid rgba(27, 27, 27, 0.4);
-box-sizing: border-box;
-border-radius: 6px;
-margin-left: 20px;
-}}
+    display: flex;
+    padding: 12px 30px;
+    width: 106px;
+    height: 43px;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid rgba(27, 27, 27, 0.4);
+    box-sizing: border-box;
+    border-radius: 6px;
+  }}
 
 
 .site-navigation {
   display: none;
   @include xl{
     display: flex;
-    margin: 0 5px;
+    margin: 0;
     padding: 0;
     list-style: none;
     align-items: center;
@@ -188,9 +205,11 @@ margin-left: 20px;
   }}
 
 .user-navigation {
+
   @include xl{
+
     align-items: center;
-    margin: 0 -5px;
+    margin: 0 25px;
     padding: 0;
     list-style: none;
   }}

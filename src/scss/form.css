@@ -1,6 +1,6 @@
-/* Error: Undefined mixin
+/* Error: Undefined mixin.
  *    ,
- * 16 | |   @include  xl{
+ * 16 | /   @include  xl{
  * 17 | |
  * 18 | |   width: 100vw;
  * 19 | |   height: 100vh;
@@ -14,11 +14,12 @@
  * 27 | |   justify-content: center;
  * 28 | | }}
  *    | '-^
- *form.scss 16:3 root stylesheet */
+*'
+*form.scss 16:3  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-  "Droid Sans Mono", monospace, monospace;
+      "Droid Sans Mono", monospace, monospace;
   white-space: pre;
   display: block;
   padding: 1em;

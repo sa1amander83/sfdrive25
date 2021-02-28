@@ -1,11 +1,10 @@
-import React, {Component} from "react";
-
+import React from "react";
+import {NavLink} from 'react-router-dom';
 import "./styles/header.scss";
 
-class Header extends Component {
 
+const Header = () => {
 
-render () {
     return (
     <header className="main-header">
     <div className="main-navigation-wrapper">
@@ -18,16 +17,16 @@ render () {
             <div className="menu-navigation">
                 <nav className="main-navigation">
                         <ul className="site-navigation">
-                            <li><a href="index.html" className="is-active" >О нас</a></li>
-                            <li><a href="#">Условия</a> </li>
-                            <li><a href="faq.html">Частые вопросы</a> </li>
+                            <li><NavLink to="/about" className="is-active" >О нас</NavLink></li>
+                            <li><NavLink to="/register">Условия</NavLink></li>
+                            <li><NavLink to="/faq">Частые вопросы</NavLink> </li>
                          </ul>
                 </nav>
 
                 <div className="user-navigation-wrapper" >
                     <ul className="user-navigation">
                         <li>
-                            <a className="login-link" href ="#">Войти </a>
+                            <NavLink to   ="/EntryForm"className="login-link" >Войти </NavLink>
                         </li>
                     </ul>
                 </div>
@@ -54,6 +53,5 @@ render () {
     );
 }
 
-}
 
 export default Header;

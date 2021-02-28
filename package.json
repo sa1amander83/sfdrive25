@@ -4,9 +4,9 @@
   "description": "trainig in design",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --mode development --open --watch --hot",
+    "dev": "webpack serve --mode development --open --watch --hot --inline",
     "test": "test",
-    "compile-sass": "sass src/scss/style.scss src/css/style.css",
+    "compile-sass": "sass src/scss/register.scss src/css/register.css",
     "watch-sass": "sass --watch src/scss/style.scss:src/css/style.css",
     "build": "webpack",
     "lint": "eslint --fix --ext .js,.jsx .",
@@ -21,11 +21,14 @@
   "author": "vitality",
   "license": "ISC",
   "dependencies": {
+    "@hot-loader/react-dom": "^17.0.1",
+    "@ljharb/eslint-config": "^17.5.1",
+    "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
     "emmet": "^2.2.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "^4.0.1"
+    "react-dom": "npm:@hot-loader/react-dom@^17.0.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -64,6 +67,7 @@
     "pug": "^3.0.0",
     "pug-loader": "^2.4.0",
     "react-hot-loader": "^4.13.0",
+    "react-scripts": "^4.0.3",
     "sass": "^1.32.2",
     "sass-loader": "^10.1.0",
     "scss": "^0.2.4",
@@ -73,6 +77,12 @@
     "terser-webpack-plugin": "^5.1.1",
     "webpack": "^5.12.2",
     "webpack-cli": "^4.4.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   }
 }

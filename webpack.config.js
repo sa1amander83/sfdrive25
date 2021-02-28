@@ -5,35 +5,58 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const esLintWebpackPlugin = require('eslint-webpack-plugin');
+var nodeExternals = require('webpack-node-externals');
 const PATHS = {
   src: path.join(__dirname,'./src'),
   dist: path.join(__dirname,'./dist'),
   assets: path.join(__dirname,'./dist')
 };
 module.exports = {
-    mode:'development',
+    mode:'production',
     devtool: 'inline-source-map',
-    externals: {
-        paths: PATHS
-    },
+    target: 'node',
+    externals:[nodeExternals(), {paths: PATHS}, {react:'React'}],
+
     entry: {
         index: './src/index.js'},
         output: {
         filename: '[name].js',
             path: PATHS.dist,
-            publicPath: './'
+            publicPath: '/'
     },
+
     devServer: {
-        contentBase:'./dist',
-        hot:true
+        contentBase:__dirname + '/dist',
+        port:8081,
+                hot:true,
+        historyApiFallback: {index:'/dist'}
     },
+
+    resolve: {
+        alias: {
+          'react-dom': '@hot-loader/react-dom',
+        }},
+
       module: {
         rules: [
             {
                 test: /\.js$/,
                 loader:'babel-loader',
                 exclude: '/node_modules/',
+                options:{
+                    presets:["@babel/preset-env", "@babel/preset-react"] }
             },
+            {
+                test: /\.jsx$/,
+                loader:'babel-loader',
+                exclude: '/node_modules/',
+                options:{
+                    presets:["@babel/preset-env", "@babel/preset-react"] }
+            },
+
+
+
+
 
             {   test: /\.js$/,
                 exclude: "/node_modules/",
@@ -71,7 +94,7 @@ module.exports = {
             },
                   ]
     },
-
+target:'node',
     plugins: [new MiniCssExtractPlugin({
         filename: '[name].css',
     }),
@@ -87,11 +110,7 @@ module.exports = {
 
     }),
 
-        new HtmlWebpackPlugin ({
-            template: `${PATHS.src}/faq.html`,
-            filename: './faq.html',
-            minify: false
-        }),
+
         new esLintWebpackPlugin ({
 
         })
