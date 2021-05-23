@@ -1,0 +1,133 @@
+@import "../styles/mixins.scss";
+@import '../styles/fonts.scss';
+@import '../styles/generic.scss';
+@import '../styles/normalize.scss';
+
+
+.step-above {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 19px;
+}
+.register-page {
+display: inline-block;
+}
+.info-wrapper {
+  width: 680px;
+
+}
+
+.tell-about {
+  margin: 20px auto 52px;
+  padding: 0;
+
+}
+.information-about-you {
+  text-align:  left;
+  font-size: 36px;
+
+}
+
+.information-about-user h2 {
+  margin-bottom: 14px;
+}
+
+.information-about-user input {
+  margin-bottom: 10px;
+  font-family: Roboto ;
+  font-size: 14px;
+}
+
+
+
+
+.data  {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+}
+
+
+.form-info{
+  margin-bottom: 60px;
+}
+
+.form-passport {
+  margin-top: -11px;
+  margin-bottom: 48px;
+}
+
+.dataPass {
+  display: grid;
+  grid-template-rows: 1fr 1fr ;
+ grid-template-columns: 1fr 1.57fr ;
+ margin-top: -4px;
+}
+label {
+ align-self: center;
+ justify-self: flex-start;
+ font-size: 14px;
+ padding-left: 2px;
+margin-bottom: 2px;
+}
+
+input {
+  cursor: url("../img/cursor.png"), pointer;
+  margin:10px 0;
+  font-family: Roboto;
+  font-size: 14px;
+
+}
+.user-passport h2 {
+  margin-bottom: 15px;
+}
+
+
+.long-input {
+width: 416px;
+height: 44px;
+}
+
+.short-input {
+  width: 155px;
+height: 44px;
+  display: flex;
+}
+
+
+.information-about-you {
+  margin-bottom: 19px;
+}
+
+.permiss-de-condure.container {
+  margin-left: 3px;
+margin-bottom: 75px; }
+
+
+  input:focus{
+    border: 2px solid #61A199;
+    outline: none;
+  }
+
+ .rectangle-info {
+    height: 1px;
+    width: 1440px;
+    margin:79px auto 17px;
+    transform: translateX(-50%);
+left: 50%;
+position: relative;
+box-shadow: 0px -1px 0px 0px #DEE2E4;
+;
+  }
+
+button {
+    margin-bottom: 20px;
+    width: 176px;
+height: 51px;
+
+background: #E6E6E6;
+border-radius: 6px;
+  }
+
+ 
