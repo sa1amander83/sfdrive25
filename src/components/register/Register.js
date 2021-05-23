@@ -7,7 +7,16 @@ import Maininfo from './Maininfo'
 import Permiss from './Permiss'
 
 export default function Register (props)  {
-  
+
+    const [name, setName] = useState("");
+    const [birth, setBirth] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+
+
+
+
+
 
       // const onNameChange=(e)=> {
       //       setName(e.target.value) 
@@ -60,8 +69,6 @@ console.log ('hello')
   }
 
 
-
-
   // render() {
   
     return (
@@ -72,6 +79,7 @@ console.log ('hello')
 
           <div className="info-wrapper">
             <form className="form-info">
+            {/*<form className="form-info" action ="registration.js" method ="post">*/}
 
               <Maininfo/>
               <Passport/>
@@ -80,7 +88,7 @@ console.log ('hello')
 
             <div className="rectangle-info" />  
 
-          <button onSubmit={onSubmit}   className="continiueButton"> Продолжить</button>
+          <button type="submit" onSubmit={onSubmit}   className="continiueButton"> Продолжить</button>
 
 
           </form>

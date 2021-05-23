@@ -4,7 +4,7 @@
   "description": "trainig in design",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --mode development --progress   --hot",
+    "dev": "webpack serve --mode development --progress --open  --hot",
        "test": "test",
     "compile-sass": "sass src/scss/style.scss src/css/style.css",
     "watch-sass": "sass --watch src/scss/style.scss:src/css/style.css",

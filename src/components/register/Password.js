@@ -33,6 +33,7 @@ function Password(props) {
                               type="password"
                               onChange={onPasswrodChange}
                               value= {password}
+                              autoComplete="new-password"
                               placeholder="0000 000000"
                           />
 
@@ -41,6 +42,7 @@ function Password(props) {
                               id="repeatPassword"
                               className="short-input data"
                               type="password"
+                              autoComplete="new-password"
                               onChange={onRepeatPassword}
                               value= {repeatPassword}
                           />

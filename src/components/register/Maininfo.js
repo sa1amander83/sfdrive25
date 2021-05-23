@@ -2,7 +2,8 @@ import React, {useState } from "react";
 import PropTypes from 'prop-types'
 
 
-function Maininfo(props) {
+// function Maininfo({name, setName},{birth, setBirth},{email, setEmail},{phone, setPhone}) {
+function Maininfo({name, setName,birth, setBirth,email, setEmail, phone, setPhone}) {
 
   const userRegData ={
     name: name,
@@ -10,14 +11,9 @@ function Maininfo(props) {
     email: email,
     phone: phone}
     
-  const [name, setName] = useState("");
-  const [birth, setBirth] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
+
   const onNameChange=(e)=> {
-    setName(e.target.value) 
-;
-}
+    setName(e.target.value) }
 
 const onBirthChange=(e)=> {
 setBirth(e.target.value) 
@@ -37,8 +33,9 @@ setPhone(e.target.value)
               <label htmlFor="info-initials">ФИО</label>
               <input
                 id="info-initials"
-                onChange={onNameChange}
+
                 value= {name}
+                onChange={onNameChange}
                 className="long-input"
                 type="text"
                 placeholder="ФИО полностью"
@@ -47,8 +44,9 @@ setPhone(e.target.value)
               <label htmlFor="date-of-birthday"> Дата рождения</label>
               <input
                 id="date-of-birthday"
-                onChange={onBirthChange}
+
                 value= {birth}
+                onChange={onBirthChange}
                 className="short-input  data"
                 type="date"
               />
@@ -58,8 +56,8 @@ setPhone(e.target.value)
                 id="email"
                 className="long-input"
                 type="email"
-                onChange={onEmailChange}
                 value= {email}
+                onChange={onEmailChange}
                 placeholder="mail@example.com"
               />
 
@@ -67,8 +65,9 @@ setPhone(e.target.value)
               <input
                 id="phone-number"
                 className="short-input"
-                onChange={onPhoneChange}
                 value= {phone}
+                onChange={onPhoneChange}
+
                 type="phone"
                 placeholder="+7 900 000-00-00"
               />

@@ -13,11 +13,11 @@ const PATHS = {
   assets: path.join(__dirname,'./dist')
 };
 module.exports = {
-          entry: "./src/index.js",
+          entry: "./src/indexold.js",
         mode: "development",
         output: {
             path: path.join(__dirname, "/dist"),
-            filename: "main.js"
+            filename: "indexold.js"
         },
             devServer: {
             contentBase: "./dist",
@@ -47,7 +47,7 @@ module.exports = {
     //     paths: PATHS
     // },
     // entry:{ 
-    //     index: './src/index.js'},
+    //     index: './src/indexold.js'},
 
     // output: {
     //         path: '/dist',
@@ -151,6 +151,10 @@ module.exports = {
         maxEntrypointSize: 5120000,
         maxAssetSize: 5120000
     },
-    
+    resolve: {
+        alias: {
+          'react-dom': '@hot-loader/react-dom'
+        }
+    }
 };
 

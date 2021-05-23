@@ -1,16 +1,32 @@
 const express = require ('express');
-const mongoose = require ('mongoose');
-const { usersRouter } = require('./user-router');
 const app = express();
 
+const mongoose = require ('mongoose');
+const { usersRouter } = require('./user-router');
 
-mongoose.connect ('mongodb://localhost:27017/sfdrive', {useNewUrlParser:true, useUnifiedTopology:true})
+const path= require ('path');
+const db=mongoose.connection;
+
+
+
+
+mongoose.connect ('mongodb://localhost:27017/sfdrive', 
+{useNewUrlParser:true, useUnifiedTopology:true})
 .then (()=> console.log('connection established'))
 .catch (error => console.log(error));
 
-app.use ('/users', require('./user-router'))
+function loggerMiddleware(req, res, next) {
+    console.log(`[${req.method}]-${req.url}`);
+    next();
+}
+app.use(loggerMiddleware);
 
-app.listen (8081, ()=> {
+app.use (express.json());
+// app.use ('/users', require('./user-router'))
+
+
+
+app.listen (3000, ()=> {
 console.log('server is listening');
 })
 
@@ -24,7 +40,7 @@ function logger (req,res,next){
 app.use(logger);
 app.use('/users', usersRouter);
 
-app.use(express.static('dist'))
+// app.use(express.static('dist'))
 
 app.get ('/',(req,res)=> {
     res.statusCode= 418;
@@ -42,6 +58,7 @@ function authMidlwar( req,res,next) {
         }
     }
 
+
 app.post ('/',authMidlwar,(req,res)=> {
     console.log(req.url);
     console.log(req.headers);
@@ -57,9 +74,9 @@ app.delete ('/',(req,res)=> {
 });
 
 
-app.listen(8081,()=>{
-    console.log('серв прослушивается на порту 8081');
-});
+// app.listen(8000,()=>{
+//     console.log('серв прослушивается на порту 8000');
+// });
 
 
 
@@ -73,5 +90,7 @@ app.use(express.static(staticPath));
 app.set('port', process.env.PORT || 8000);
 
 const server = app.listen(app.get('port'), function() {
-    console.log('listening');
+    console.log('listening 123');
 });
+
+module.exports= app;

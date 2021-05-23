@@ -33,6 +33,7 @@ function Permiss(props) {
                 onChange={onPermissSerialChange}
                 value= {permissSerial}
                 placeholder="0000 000000"
+                autoComplete="username"
               />
 
               <label htmlFor="date-of-permiss-getting"> Дата выдачи</label>
