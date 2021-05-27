@@ -13,13 +13,15 @@ const PATHS = {
   assets: path.join(__dirname,'./dist')
 };
 module.exports = {
-          entry: "./src/indexold.js",
+          entry: "./src/index.js",
         mode: "development",
         output: {
-            path: path.join(__dirname, "/dist"),
-            filename: "indexold.js"
+            path: path.resolve(__dirname, 'dist'),
+            filename: "index.js",
+            publicPath: '/'
         },
             devServer: {
+                historyApiFallback: true,
             contentBase: "./dist",
             port: 8000,
             stats: {

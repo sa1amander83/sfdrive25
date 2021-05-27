@@ -2,8 +2,15 @@
 @import '../styles/fonts.scss';
 @import '../styles/generic.scss';
 @import '../styles/normalize.scss';
-
-
+form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+}
 .step-above {
   font-size: 20px;
   text-align: center;
@@ -18,7 +25,7 @@ display: inline-block;
 }
 
 .tell-about {
-  margin: 20px auto 52px;
+  margin: 20px auto 20px;
   padding: 0;
 
 }
@@ -29,10 +36,10 @@ display: inline-block;
 }
 
 .information-about-user h2 {
-  margin-bottom: 14px;
+  margin-bottom: 22px;
 }
 
-.information-about-user input {
+input {
   margin-bottom: 10px;
   font-family: Roboto ;
   font-size: 14px;
@@ -72,7 +79,7 @@ label {
 margin-bottom: 2px;
 }
 
-input {
+Field {
   cursor: url("../img/cursor.png"), pointer;
   margin:10px 0;
   font-family: Roboto;
@@ -105,7 +112,7 @@ height: 44px;
 margin-bottom: 75px; }
 
 
-  input:focus{
+  Field:focus{
     border: 2px solid #61A199;
     outline: none;
   }

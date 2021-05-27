@@ -43,3 +43,4 @@ const pageLoaded = function (){
     }
 };
 document.addEventListener("DOMContentLoaded",pageLoaded);
+export default pageLoaded

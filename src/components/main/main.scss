@@ -581,71 +581,73 @@ template {
 }
 
 .mainContainer {
-  min-width: 1024px;
+  max-width: 1024px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+
   text-align: center;
+  margin: 0 auto;
+  padding-top: 7px;
+  padding-right: 7px;
+  .mainHeading {
+    max-width: 620px;
+    text-align: left;
+  }
 }
 
 .mainFirstSection {
-  position: relative;
-}
-
-.mainPageHeading {
-  max-width: 610px;
   display: flex;
   flex-direction: column;
-}
-.mainPageHeading h1 {
-  text-align: left;
+  align-items: left;
   position: relative;
-  left: 238px;
-  top: 6px;
-}
-.mainPageHeading p {
-  width: 530px;
-  font-size: 24px;
-  text-align: left;
-  margin-top: 6px;
-  left: 239px;
-  position: relative;
-  line-height: 35px;
-}
-.mainPageHeading .mainBtnRegister {
-  display: inline-block;
-  width: 197px;
-  height: 51px;
-  left: 204px;
-  top: 496px;
-  background: #61A199;
-  border-radius: 6px;
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 19px;
-  letter-spacing: 0em;
-  color: white;
-  margin-top: 16px;
-  margin-left: 238px;
-}
-.mainPageHeading .mainBtnRegisterLink {
-  text-align: center;
-  align-self: center;
-  top: 16px;
-  position: relative;
-  font-size: 16px;
-  left: -20px;
+  p{
+   min-width: 535px;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: auto;
+  }
+  ul{
+    padding: 0;
+  }
+  .mainBtnRegister {
+    display: flex;
+    width: 237px;
+    height: 51px;
+    background: #61A199;
+    border-radius: 6px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    color: white;
+    text-align: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+
+    align-self: start;
+
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+
 }
 
+
 .mainDriverImg1 {
-  position: relative;
+  position: absolute;
   max-width: 1134px;
-  float: right;
-  top: -135px;
-  right: 36px;
+  top: 28px;
+  right: 82px;
 }
 
 .mainSecondSection {

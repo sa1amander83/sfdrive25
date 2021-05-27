@@ -29,7 +29,7 @@ export default class Header  extends Component {
                 <div className="user-navigation-wrapper" >
                     <ul className="user-navigation">
                         <li>
-                            <NavLink to   ="/EntryForm"className="login-link" >Войти </NavLink>
+                            <NavLink to   ="/LoginForm"className="login-link" >Войти </NavLink>
                         </li>
                     </ul>
                 </div>

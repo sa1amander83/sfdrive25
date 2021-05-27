@@ -8,7 +8,7 @@ margin-bottom: 0px;
   @include xl {
     position: sticky;
     top: 0;
-    background: #fff;
+    background-color: transparent;
     z-index: 1;
   }
 }
@@ -19,7 +19,7 @@ margin-top: -9px;
     margin-bottom: 0;
     position: sticky;
   top: 0;
-  background: #fff;
+  background-color: transparent;
   z-index: 1;
     }
 }
@@ -52,7 +52,7 @@ margin-top: -9px;
   @include xl {
     position: sticky;
     top: 0;
-    background: #fff;
+    background-color: transparent;
     z-index: 1;
     display: flex;
     justify-content: space-between;
@@ -148,9 +148,15 @@ p {
     color: #1B1B1B;
   }}
 
+.active, .collapse:hover {
+  background-color: transparent !important;
+  border-radius: 6px;
+  border: none;
+}
 
 .site-navigation a:hover,
 .site-navigation a:focus{
+
  background-color: #dbd6d6;
   padding: 12px 20px;
 }
@@ -198,3 +204,5 @@ margin-left: 20px;
     padding: 0;
     list-style: none;
   }}
+
+

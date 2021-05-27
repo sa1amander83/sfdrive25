@@ -3,8 +3,8 @@ import './collapse';
 import "./faq.scss";
 
 
-export default class Faq  extends Component {
-    render () {
+export default function Faq() {
+
         return (
         <div  className="faq-section">
         <img className="main-page-logo" src="img/FAQ.svg" alt="рисунок команды"/>
@@ -36,5 +36,4 @@ export default class Faq  extends Component {
         </div>
         );
     }
- }
 
