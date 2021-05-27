@@ -32,7 +32,7 @@ const LoginForm = (props) => {
 
               <Field
               id="inputPassword"
-              className="short-input"
+              className="long-input"
               type="password"
               component="input"
               name="password"
