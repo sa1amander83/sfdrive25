@@ -6,7 +6,7 @@ import './js/script';
 // import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 // import  rootReducer from './redux/reducers/regReducer';
-import store from "../store";
+import store from "./store";
 
 const app = (
     <Provider store = {store}>

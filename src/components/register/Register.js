@@ -1,6 +1,6 @@
 import React from "react";
 import './register.scss';
-import store from "../../../store";
+import store from "../../store";
 import UserRegPage from "./UserRegPage"
 import { Provider } from "react-redux";
 import showResults from "./showResults";

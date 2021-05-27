@@ -10,7 +10,7 @@ import Faq from './components/faq/Faq';
 import Main from './components/main/Main'
 import Register from './components/register/Register'
 import { Provider } from "react-redux";
-import store from "../store";
+import store from "./store";
 import showResults from "./components/login/showResults";
 
 
