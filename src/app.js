@@ -21,6 +21,7 @@ import showResults from "./components/login/showResults";
         <div>
             <Header/>
               <LoginForm onSubmit= {showResults}/>
+              
               <Route path ='/main' component ={Main}/>
               <Route path ='/about' component= {About}/>
               <Route path = '/faq' component = {Faq}/> 

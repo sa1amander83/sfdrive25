@@ -1,22 +1,44 @@
 import React from "react";
 
-import { Field, reduxForm } from "redux-form";
+import { Form, Field } from 'react-final-form'
 import { sendRegData } from "../../redux/actions/types";
 
-const UserRegData = (props) => {
-  const {handleSubmit} = data =>{
-    sendRegData(UserRegData);
-  }
+  
+// const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+// const handleSubmit = async values => {
+//   await sleep(300);
+//   window.alert(JSON.stringify(values, 0, 2));
+// };
 
+
+
+const UserRegData = props => {
   // const formData = (props) =>{ 
   //   const onSubmit = (data) => {
   //   sendRegData(data);
   //   }
-  
+
+
+
+
   return (
 
 
+<Form
+initialValues={{
+        // firstName: 'Dan'
+      }}
+      onSubmit={values => {
+        window.alert(JSON.stringify(values, 0, 2));
+       // send values to the cloud
+     }}
+      validate={values => {
 
+        // do validation here, and return errors object
+      }}>
+
+
+  {({ handleSubmit }) => (
     <form onSubmit={handleSubmit}>
       <div>
         <section className="information-about-user   form-info ">
@@ -166,9 +188,10 @@ const UserRegData = (props) => {
     <div className="rectangle-info" />
       <button   className="continiueButton"> Продолжить</button>
     </form>
-
+  )}
+    </Form>
   );
 };
 
-export default reduxForm({form: 'userData'})(UserRegData)
+export default UserRegData
   
