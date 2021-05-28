@@ -3,7 +3,7 @@ import './register.scss';
 import store from "../../store";
 import UserRegPage from "./UserRegPage"
 import { Provider } from "react-redux";
-import showResults from "./showResults";
+import regStep2 from "./regStep2";
 
 const Register =() => {
   return (
@@ -12,7 +12,7 @@ const Register =() => {
       <div className= "step-above"> Шаг 1 из 3</div>
       <h1  className= "tell-about">Расскажите о себе</h1>
       <div className= "info-wrapper">
-      <UserRegPage onSubmit={showResults} />
+      <UserRegPage onSubmit={regStep2} />
       </div>
       </div>
    

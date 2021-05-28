@@ -1,15 +1,18 @@
 import React from "react";
 
 import { Field, reduxForm } from "redux-form";
+import { sendRegData } from "../../redux/actions/types";
 
 const UserRegData = (props) => {
-  const {handleSubmit} = props
-
-  const formData = (props) =>{ 
-    const onSubmit = (data) => {
-      console.log(data);
-    }
+  const {handleSubmit} = data =>{
+    sendRegData(UserRegData);
   }
+
+  // const formData = (props) =>{ 
+  //   const onSubmit = (data) => {
+  //   sendRegData(data);
+  //   }
+  
   return (
 
 
